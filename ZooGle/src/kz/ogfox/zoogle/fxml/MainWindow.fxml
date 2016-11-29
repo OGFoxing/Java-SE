@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -15,7 +19,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kz.ogfox.zoogle.controllers.MainWindowController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -75,6 +79,8 @@
             <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
               <children>
                 <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="View" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <ImageView fx:id="imageView" fitHeight="203.0" fitWidth="410.0" layoutX="11.0" layoutY="41.0" onDragDropped="#handleDragDropped" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="9.0" />
+                        <Button fx:id="btnTest" layoutX="43.0" layoutY="273.0" mnemonicParsing="false" onAction="#showImg" text="test" />
               </children>
             </AnchorPane>
           </content>
@@ -82,6 +88,13 @@
         <AnchorPane>
           <children>
             <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                  <Slider fx:id="opacitySlider" blockIncrement="0.1" layoutX="14.0" layoutY="69.0" max="1.0" />
+                  <Slider fx:id="sepiaSlider" blockIncrement="0.1" layoutX="14.0" layoutY="108.0" max="1.0" />
+                  <Slider fx:id="sizeSlider" blockIncrement="0.1" layoutX="14.0" layoutY="143.0" max="1.0" />
+                  <Label fx:id="opacityValue" layoutX="168.0" layoutY="68.0" text="0" />
+                  <Label fx:id="sepiaValue" layoutX="168.0" layoutY="107.0" text="0" />
+                  <Label fx:id="sizeValue" layoutX="168.0" layoutY="142.0" text="0" />
+                  <CheckBox fx:id="cBox" layoutX="74.0" layoutY="41.0" mnemonicParsing="false" text="Sepia" />
           </children>
         </AnchorPane>
       </items>
