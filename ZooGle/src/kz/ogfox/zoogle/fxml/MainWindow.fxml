@@ -18,8 +18,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kz.ogfox.zoogle.controllers.MainWindowController">
+<VBox prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kz.ogfox.zoogle.controllers.MainWindowController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -76,11 +77,14 @@
         </AnchorPane>
         <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
           <content>
-            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="490.0">
               <children>
                 <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="View" textAlignment="CENTER" textFill="$x2" wrapText="false" />
-                        <ImageView fx:id="imageView" fitHeight="203.0" fitWidth="410.0" layoutX="11.0" layoutY="41.0" onDragDropped="#handleDragDropped" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="9.0" />
+                        <ImageView fx:id="imageView" fitHeight="190.0" fitWidth="472.0" layoutX="11.0" layoutY="41.0" onDragDropped="#handleDragDropped" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="-53.0" />
                         <Button fx:id="btnTest" layoutX="43.0" layoutY="273.0" mnemonicParsing="false" onAction="#showImg" text="test" />
+                        <Button fx:id="btnAddUrl" layoutX="43.0" layoutY="353.0" mnemonicParsing="false" onAction="#addFromUrl" text="URl" />
+                        <CustomTextField fx:id="txtUrl" layoutX="106.0" layoutY="353.0" />
+                        <Button fx:id="testData" layoutX="282.0" layoutY="353.0" mnemonicParsing="false" onAction="#testDataUrl" text="test url" />
               </children>
             </AnchorPane>
           </content>
@@ -88,13 +92,26 @@
         <AnchorPane>
           <children>
             <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
-                  <Slider fx:id="opacitySlider" blockIncrement="0.1" layoutX="14.0" layoutY="69.0" max="1.0" />
-                  <Slider fx:id="sepiaSlider" blockIncrement="0.1" layoutX="14.0" layoutY="108.0" max="1.0" />
-                  <Slider fx:id="sizeSlider" blockIncrement="0.1" layoutX="14.0" layoutY="143.0" max="1.0" />
-                  <Label fx:id="opacityValue" layoutX="168.0" layoutY="68.0" text="0" />
-                  <Label fx:id="sepiaValue" layoutX="168.0" layoutY="107.0" text="0" />
-                  <Label fx:id="sizeValue" layoutX="168.0" layoutY="142.0" text="0" />
-                  <CheckBox fx:id="cBox" layoutX="74.0" layoutY="41.0" mnemonicParsing="false" text="Sepia" />
+                  <Slider fx:id="opacitySlider" blockIncrement="0.1" layoutX="9.0" layoutY="84.0" max="1.0" />
+                  <Slider fx:id="sepiaSlider" blockIncrement="0.1" layoutX="9.0" layoutY="123.0" max="1.0" />
+                  <Slider fx:id="sizeSlider" blockIncrement="0.1" layoutX="9.0" layoutY="158.0" max="2.0" />
+                  <Label fx:id="opacityValue" layoutX="153.0" layoutY="83.0" text="0" />
+                  <Label fx:id="sepiaValue" layoutX="153.0" layoutY="122.0" text="0" />
+                  <Label fx:id="sizeValue" layoutX="153.0" layoutY="157.0" text="0" />
+                  <CheckBox fx:id="cBoxSepia" layoutX="166.0" layoutY="83.0" mnemonicParsing="false" text="Sepia" />
+                  <Label layoutX="26.0" layoutY="68.0" text="Opacity value" />
+                  <Label layoutX="26.0" layoutY="109.0" text="Sepia value" />
+                  <Label layoutX="26.0" layoutY="146.0" text="Size value" />
+                  <Slider fx:id="boxBlurSlider" blockIncrement="0.1" layoutX="9.0" layoutY="190.0" max="10.0" />
+                  <Label fx:id="boxBlurValue" layoutX="153.0" layoutY="189.0" text="0" />
+                  <Label layoutX="27.0" layoutY="177.0" text="Box blur value" />
+                  <CheckBox fx:id="cBoxBlur" layoutX="163.0" layoutY="188.0" mnemonicParsing="false" text="Box blur" />
+                  <Slider fx:id="gaussianBlurSlider" blockIncrement="0.1" layoutX="9.0" layoutY="218.0" max="10.0" />
+                  <Slider fx:id="motionBlurSlider" blockIncrement="0.1" layoutX="9.0" layoutY="251.0" max="10.0" />
+                  <Label fx:id="gaussianBlurValue" layoutX="152.0" layoutY="217.0" text="0" />
+                  <Label fx:id="motionBlurValue" layoutX="150.0" layoutY="250.0" text="0" />
+                  <CheckBox fx:id="cGaussianBlur" layoutX="163.0" layoutY="217.0" mnemonicParsing="false" text="Guas blur" />
+                  <CheckBox fx:id="cMotionBlur" layoutX="163.0" layoutY="250.0" mnemonicParsing="false" text="Motion blur" />
           </children>
         </AnchorPane>
       </items>
